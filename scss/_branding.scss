@@ -1,0 +1,13 @@
+.branding{
+    line-height: 116px;
+    text-align: right;
+    margin: 3rem auto 5rem auto;
+
+    background-image: url( '../public/Rotten_Tomato_Icon.png' );
+    background-repeat: no-repeat;
+}
+
+.site-title{
+    font-size: 3rem;
+    text-shadow: 5px 5px $text-shadow;
+}

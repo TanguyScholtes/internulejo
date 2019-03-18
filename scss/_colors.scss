@@ -1,0 +1,40 @@
+$text-color: white;
+$background-color: rgb(50, 50, 50);
+$text-shadow: rgba(0, 0, 0, 0.7);
+$link: #cf3737;
+$link-hover: #a12525;
+
+// Footer links
+$footer-link: #cd8b00;
+$footer-link-hover: #ffbc31;
+
+// Clock Toggle Button
+$clock-toggle-button-background: #cf3737;
+$clock-toggle-button-shadow: #a12525;
+$clock-toggle-button-text: $clock-toggle-button-shadow;
+$clock-toggle-button-border: lighten( $clock-toggle-button-background, 10% );
+$clock-toggle-button-hover: white;
+
+// Clock Modifier (increase/decrease) Buttons
+$clock-modifier-button-background: #2fa913;
+$clock-modifier-button-shadow: #1e670d;
+$clock-modifier-button-text: $clock-modifier-button-shadow;
+$clock-modifier-button-border: lighten( $clock-modifier-button-background, 10% );
+$clock-modifier-button-hover: white;
+
+// Clock Modifier (increase/decrease) Disabled Buttons
+$clock-modifier-disabled-button-background: rgb(180, 180, 180);
+$clock-modifier-disabled-button-shadow: darken( $clock-modifier-disabled-button-background, 15% );
+$clock-modifier-disabled-button-text: $clock-modifier-disabled-button-shadow;
+$clock-modifier-disabled-button-border: lighten( $clock-modifier-disabled-button-background, 10% );
+
+// Modals background
+$modal-background: #c7b29a;
+$modal-text: #312b29;
+
+// Modal Buttons
+$modals-button-background: #b09c87;
+$modals-button-shadow: #6e6258;
+$modals-button-text: $modals-button-shadow;
+$modals-button-border: lighten( $modals-button-background, 10% );
+$modals-button-hover: #362f2d;

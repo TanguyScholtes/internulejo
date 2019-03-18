@@ -1,0 +1,77 @@
+.clock, .clock-interface {
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.clock{
+    font-size: 4rem;
+    text-shadow: 5px 5px $text-shadow;
+    margin: 0 auto !important;
+}
+
+.clock-timer{
+    margin-bottom: 2rem;
+}
+
+.clock-modifier, .clock-toggle{
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 5px 5px 0 $text-shadow;
+}
+
+.clock-toggle{
+    color: $clock-toggle-button-text;
+    background-color: $clock-toggle-button-background;
+    border-top: 2px solid $clock-toggle-button-border;
+    border-left: 2px solid $clock-toggle-button-border;
+    border-bottom: 2px solid $clock-toggle-button-shadow;
+    border-right: 2px solid $clock-toggle-button-shadow;
+    text-shadow: 2px 2px $clock-toggle-button-border;
+    transition: all 200ms ease;
+
+    &:focus, &:hover{
+        color: $clock-toggle-button-hover;
+        text-shadow: 2px 2px $clock-toggle-button-shadow;
+        transition: all 200ms ease;
+    }
+}
+
+.clock-modifier{
+    &:first-child{
+        border-radius: 1rem 0 0 1rem;
+    }
+    &:last-child{
+        border-radius: 0 1rem 1rem 0;
+    }
+
+    color: $clock-modifier-button-text;
+    background-color: $clock-modifier-button-background;
+    border-top: 2px solid $clock-modifier-button-border;
+    border-left: 2px solid $clock-modifier-button-border;
+    border-bottom: 2px solid $clock-modifier-button-shadow;
+    border-right: 2px solid $clock-modifier-button-shadow;
+    text-shadow: 2px 2px $clock-modifier-button-border;
+    transition: all 200ms ease;
+
+    &:focus, &:hover{
+        color: $clock-modifier-button-hover;
+        text-shadow: 2px 2px $clock-modifier-button-shadow;
+        transition: all 200ms ease;
+    }
+}
+
+.disabled{
+    color: $clock-modifier-disabled-button-text;
+    background-color: $clock-modifier-disabled-button-background;
+    border-top: 2px solid $clock-modifier-disabled-button-border;
+    border-left: 2px solid $clock-modifier-disabled-button-border;
+    border-bottom: 2px solid $clock-modifier-disabled-button-shadow;
+    border-right: 2px solid $clock-modifier-disabled-button-shadow;
+    text-shadow: 2px 2px $clock-modifier-disabled-button-border;
+
+    &:focus, &:hover{
+        color: $clock-modifier-disabled-button-text;
+        text-shadow: 2px 2px $clock-modifier-disabled-button-border;
+    }
+}

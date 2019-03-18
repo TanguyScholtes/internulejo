@@ -1,0 +1,52 @@
+.modal{
+    background-color: $modal-background;
+    color: $modal-text;
+    box-sizing: content-box;
+    padding: 1rem;
+    border-image: url( '../public/parchment.png' ) 20 / 20px round;
+    background-clip: content-box;
+    text-align: center;
+    & > *{
+        margin: 0 1rem;
+        &:first-child{
+            margin-top: 1rem;
+        }
+        &:last-child{
+            margin-bottom: 1rem;
+        }
+    }
+    & .clock{
+        text-shadow: none;
+    }
+}
+
+.modal-interface{
+    margin: 2rem 1rem;
+    font-size: 1.2rem;
+}
+
+.mini-text{
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.modal-button{
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 0 $text-shadow;
+    color: $modals-button-text;
+    background-color: $modals-button-background;
+    border-top: 2px solid $modals-button-border;
+    border-left: 2px solid $modals-button-border;
+    border-bottom: 2px solid $modals-button-shadow;
+    border-right: 2px solid $modals-button-shadow;
+    text-shadow: 2px 2px $modals-button-border;
+    transition: all 200ms ease;
+
+    &:focus, &:hover{
+        color: $modals-button-hover;
+        text-shadow: 2px 2px $modals-button-shadow;
+        transition: all 200ms ease;
+    }
+}
