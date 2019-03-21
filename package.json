@@ -11,8 +11,8 @@
     "url": "git+https://github.com/TanguyScholtes/internulejo.git"
   },
   "keywords": [
-    "node",
-    "react"
+    "react",
+    "strapi"
   ],
   "author": "Tanguy Scholtes",
   "bugs": {

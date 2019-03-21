@@ -1,0 +1,14 @@
+.company{
+    margin-bottom: 2.5rem;
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
+.companies-list{
+    padding-left: 1rem;
+}
+
+.company-name{
+    margin-bottom: 0.5rem;
+}

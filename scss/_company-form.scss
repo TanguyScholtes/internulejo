@@ -1,0 +1,30 @@
+.company-form{
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid $form-border;
+    padding-bottom: 2rem;
+
+    p, div{
+        margin-bottom: 1.5rem;
+    }
+    label{
+        display: block;
+    }
+    input, textarea{
+        box-sizing: border-box;
+        width: 100%;
+        border-radius: 0.5rem;
+        padding: 0.75rem;
+        border: 1px solid $form-border;
+    }
+}
+
+.edit-button{
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+}
+
+.cancel-button{
+    color: darken( $form-border, 15% );
+    text-decoration: underline;
+    margin-left: 2rem;
+}

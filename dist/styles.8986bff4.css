@@ -345,7 +345,7 @@ template {
 html {
   font-size: 18px;
   color: #1A2A3A;
-  background: linear-gradient(rgba(221, 221, 221, 0.4), rgba(204, 204, 204, 0.4)), url("../public/what-the-hex.png");
+  background: linear-gradient(rgba(221, 221, 221, 0.4), rgba(204, 204, 204, 0.4)), url("what-the-hex.b19da755.png");
   min-height: 100vh;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;

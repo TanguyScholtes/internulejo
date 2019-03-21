@@ -14,7 +14,10 @@
 html{
     font-size: $font-size;
     color: $text-color;
-    background-color: $background-color;
+    background: linear-gradient( $background-color, $background-color-alt ), url( '../public/what-the-hex.png' );
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 a{
@@ -27,10 +30,42 @@ a{
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Upheaval";
+    font-family: 'Philosopher', sans-serif;
 }
 
-.branding, .container{
-    width: $width;
+.container{
+    max-width: $width;
     margin: 0 auto;
+    line-height: $line-height;
 }
+
+.bold{
+    font-weight: bold;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.button{
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    color: $button-text;
+    background-color: $button-background;
+    text-shadow: 2px 2px $button-shadow;
+    border-top: 2px solid $button-border;
+    border-left: 2px solid $button-border;
+    border-bottom: 2px solid $button-shadow;
+    border-right: 2px solid $button-shadow;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+@import "banner";
+@import "search";
+@import "footer";
+@import "list";
+@import "menu";
+@import "company-form";

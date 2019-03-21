@@ -1,9 +1,24 @@
-$text-color: white;
-$background-color: rgb(50, 50, 50);
+$text-color: #1A2A3A;
+$background-color: rgba(221, 221, 221, 0.4); //#DDDDDD
+$background-color-alt: rgba(204, 204, 204, 0.4); //#CCCCCC
 $text-shadow: rgba(0, 0, 0, 0.7);
-$link: #cf3737;
-$link-hover: #a12525;
+$link: rgb(45, 105, 202);
+$link-hover: darken( $link, 15% );
 
-// Footer links
-$footer-link: #cd8b00;
-$footer-link-hover: #ffbc31;
+// Banner
+$site-title-marker: #FF6666;
+$site-title-desktop: rgb(45, 105, 202);
+
+// Footer
+$footer-link: $link;
+$footer-link-hover: $link-hover;
+
+// Forms
+$form-border: #bbbbbb;
+$form-color: #aaaaaa;
+
+// Buttons
+$button-text: #eeeeee;
+$button-background: $link;
+$button-shadow: darken( $button-background, 15% );
+$button-border: lighten( $button-background, 10% );
