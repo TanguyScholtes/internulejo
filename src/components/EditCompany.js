@@ -29,7 +29,7 @@ function EditCompany ( props ) {
             </p>
             <p>
                 <label htmlFor="edit-company-zip">Code postal:</label>
-                <input type="number" step="1" id="edit-company-zip" name="edit-company-zip" value={ props.company.zip } placeholder="4020, 1000, etc…" onChange={ ( e ) => props.change( e ) } />
+                <input type="number" step="1" min="1000" max="9999" id="edit-company-zip" name="edit-company-zip" value={ props.company.zip } placeholder="4020, 1000, etc…" onChange={ ( e ) => props.change( e ) } />
             </p>
             <p>
                 <label htmlFor="edit-company-city">Ville:</label>
