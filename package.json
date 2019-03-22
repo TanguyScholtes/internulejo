@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Find a web company near you !",
   "scripts": {
-    "start": "parcel public/index.html",
+    "start": "npx parcel public/index.html",
     "build": "parcel build public/index.html --out-dir docs --public-url ./"
   },
   "repository": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/TanguyScholtes/internulejo",
   "dependencies": {
+    "axios": "^0.18.0",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
