@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ------------ External Imports ------------ */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -391,6 +392,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 .button:hover {
   cursor: pointer;
+}
+
+.error {
+  border-radius: 0.5rem;
+  border: 1px solid #FF3333;
+  color: #FF3333;
+  background-color: #ffcccc;
+  padding: 1rem;
+}
+.error p {
+  margin: 0.5rem 0 !important;
+}
+.error p::before {
+  content: "• ";
+}
+.error p:first-child {
+  margin-top: 0;
+}
+.error p:last-child {
+  margin-bottom: 0;
 }
 
 .banner {

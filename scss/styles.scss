@@ -63,6 +63,27 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.error{
+    border-radius: 0.5rem;
+    border: 1px solid $error-text;
+    color: $error-text;
+    background-color: $error-background;
+    padding: 1rem;
+
+    & p{
+        margin: 0.5rem 0 !important;
+        &::before{
+            content: "• ";
+        }
+        &:first-child{
+            margin-top: 0;
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
 @import "banner";
 @import "search";
 @import "footer";

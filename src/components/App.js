@@ -3,7 +3,7 @@ import List from "./List.js";
 import SearchBar from "./SearchBar.js";
 import AddCompany from "./AddCompany.js";
 import axios from 'axios'
- 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -11,10 +11,7 @@ class App extends React.Component {
       companies: [],
       query: "",
       displayAddForm: false,
-      errors: {
-        website: "",
-        email: ""
-      },
+      errors: {},
       company: {
         name: "",
         website: "",
@@ -39,51 +36,8 @@ class App extends React.Component {
         });
       })
       .catch(err => {
-        console.log("FCK OFF");
+        console.log("Couldn't get companies from server. Server-chan baka ! 😡");
       });
-    /* this.setState( {
-            companies: [
-                {
-                    id: "1",
-                    name: "Eyaka",
-                    website: "https://eyaka.be/",
-                    phone: "04 242 90 45",
-                    email: "info@eyaka.be",
-                    street: "Quai Mativa 23",
-                    zip: 4020,
-                    city: "Liège",
-                    works: "réseaux sociaux, vitrines, E-commerces, référencement, audit, web app",
-                    techs: "Wordpress, Prestashop, Drupal, Podio, Jira",
-                    notes: ""
-                },
-                {
-                    id: "2",
-                    name: "Globule Bleu Liège",
-                    website: "https://www.globulebleu.com/",
-                    phone: "+32(0)4.239.84.44",
-                    email: "start@globulebleu.com",
-                    street: "Quai Mativa 62",
-                    zip: 4020,
-                    city: "Liège",
-                    works: "corpo, vitrines, CMS, e-commerces, référencement, vidéos (animations), supports visuels (print, flyers, catalogues, affiches), imprimés textiles, identités graphiques",
-                    techs: "Drupal, Flash, UX/UI, Adobe Creative Suite, HTML5, CSS3, responsive",
-                    notes: "Aussi à Bruxelles"
-                },
-                {
-                    id: "3",
-                    name: "Globule Bleu Bruxelles",
-                    website: "https://www.globulebleu.com/",
-                    phone: "+32(0)4.239.84.44",
-                    email: "start@globulebleu.com",
-                    street: "Boulevard de l'humanité 237",
-                    zip: 1620,
-                    city: "Drogendbos",
-                    works: "corpo, vitrines, CMS, e-commerces, référencement, vidéos (animations), supports visuels (print, flyers, catalogues, affiches), imprimés textiles, identités graphiques",
-                    techs: "Drupal, Flash, UX/UI, Adobe Creative Suite, HTML5, CSS3, responsive",
-                    notes: "Aussi à Liège"
-                }
-            ] 
-        } );*/
   }
 
   toggleAddForm(e) {
@@ -130,10 +84,10 @@ class App extends React.Component {
         )
       ) {
         // Input value is not a valid URL
-        newErrors.website = "Website is not a valid URL";
-      } else {
+        newErrors.website = "Website n'est pas une URL valide";
+    } else if( newErrors.website ) {
         // URL is valid
-        newErrors.website = "";
+        delete newErrors.website;
       }
       this.setState({ errors: newErrors });
     }
@@ -146,10 +100,10 @@ class App extends React.Component {
         )
       ) {
         // Input value is not a valid email
-        newErrors.email = "Email is not valid";
-      } else {
+        newErrors.email = "Email n'est pas valide";
+    } else if( newErrors.email ){
         // Email is valid
-        newErrors.email = "";
+        delete newErrors.email;
       }
       this.setState({ errors: newErrors });
     }
@@ -170,9 +124,19 @@ class App extends React.Component {
       this.state.company.name.length > 0
     ) {
       // No Errors
-      console.log("saveCompany", "No error!");
       //save company in DB
-      //this.toggleAddForm( e );
+      axios
+        .post("http://localhost:1337/companies")
+        .then(results => {
+            // if gets updated companies list, update state with new list (+success message)
+            // if gets newly created company, update state manually (+success message)
+            // if gets success message, update state manually BEFORE toggleAddForm (+success message)
+            console.log(results);
+        })
+        .catch(err => {
+          console.log("Couldn't save company in database. Server-chan baka ! 😡");
+        });
+      this.toggleAddForm( e );
     }
   }
 
@@ -184,7 +148,18 @@ class App extends React.Component {
       // No Errors
       console.log("editCompany", "No error!");
       //update company in DB
-      //this.toggleEditForm( e );
+      axios
+        .post("http://localhost:1337/companies")
+        .then(results => {
+            // if gets updated companies list, update state with new list (+success message)
+            // if gets updated company, update state manually (+success message)
+            // if gets success message, update state manually BEFORE toggleEditForm (+success message)
+            console.log(results);
+        })
+        .catch(err => {
+          console.log("Couldn't update company in database. Server-chan baka ! 😡");
+        });
+      this.toggleEditForm( e );
     }
   }
 

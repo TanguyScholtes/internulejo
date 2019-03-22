@@ -4,7 +4,7 @@ import ErrorMessage from './ErrorMessage.js';
 function AddCompany ( props ) {
     return(
         <form id="add-company" className="add-company company-form" action="" method="">
-            { props.errors &&
+            { Object.keys( props.errors ).length > 0 &&
                 <ErrorMessage errors = { props.errors } />
             }
             <p>

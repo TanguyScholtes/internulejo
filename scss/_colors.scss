@@ -22,3 +22,7 @@ $button-text: #eeeeee;
 $button-background: $link;
 $button-shadow: darken( $button-background, 15% );
 $button-border: lighten( $button-background, 10% );
+
+// Errors
+$error-text: #FF3333;
+$error-background: lighten( $error-text, 30% );
