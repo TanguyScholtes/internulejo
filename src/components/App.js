@@ -2,7 +2,8 @@ const React = require("react");
 import List from "./List.js";
 import SearchBar from "./SearchBar.js";
 import AddCompany from "./AddCompany.js";
-import axios from 'axios'
+import axios from 'axios';
+import companiesList from "../data.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -28,16 +29,25 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios
-      .get("http://localhost:1337/companies")
-      .then(results => {
-        this.setState({
-          companies: results.data
-        });
-      })
-      .catch(err => {
-        console.log("Couldn't get companies from server. Server-chan baka ! 😡");
-      });
+    // sort companiesList by obj.name alphabetical order
+    let list = companiesList.sort( ( a, b ) => {
+        return a.name.toLowerCase().localeCompare( b.name.toLowerCase() );
+    } );
+
+    this.setState( {
+        companies: list
+    } );
+
+    // axios
+    //   .get("http://localhost:1337/companies")
+    //   .then(results => {
+    //     this.setState({
+    //       companies: results.data
+    //     });
+    //   })
+    //   .catch(err => {
+    //     console.log("Couldn't get companies from server. Server-chan baka ! 😡");
+    //   });
   }
 
   toggleAddForm(e) {
@@ -179,12 +189,14 @@ class App extends React.Component {
           </a>
         </nav>
         {this.state.displayAddForm && (
-          <AddCompany
-            change={e => this.handleCompanyChange(e)}
-            save={e => this.saveCompany(e)}
-            errors={this.state.errors}
-            company={this.state.company}
-          />
+
+            // <AddCompany
+            //     change={e => this.handleCompanyChange(e)}
+            //     save={e => this.saveCompany(e)}
+            //     errors={this.state.errors}
+            //     company={this.state.company}
+            // />
+            <p className="footer-text">Envoyez un mail à <a href="mailto:tanguy.scholtes@gmail.com">tanguy.scholtes@gmail.com</a> ou contactez-moi sur Ryver. Je ferai en sorte que votre ajout figure sur la liste dans les plus brefs délais. 😉</p>
         )}
 
         <SearchBar change={e => this.handleSearchChange(e)} />

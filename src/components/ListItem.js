@@ -24,27 +24,33 @@ class ListItem extends React.Component {
     }
 
     render () {
-        if( this.state.displayEditForm ) {
-            return(
-                <li className="company">
-                    <h2 className="company-name">
-                        Modifier <a target="_blank" href={this.props.company.website}>{this.props.company.name}</a>
-                    </h2>
-                    <EditCompany
-                        company = { this.props.company }
-                        edit = { ( e ) => this.props.edit( e ) }
-                        change = { ( e ) => this.props.change( e ) }
-                        errors = { this.props.errors }
-                        toggle = { ( e ) => this.toggleEditionForm( e ) }
-                    />
-                </li>
-            );
-        }
+        // if( this.state.displayEditForm ) {
+        //     return(
+        //         <li className="company">
+        //             <h2 className="company-name">
+        //                 Modifier <a target="_blank" href={this.props.company.website}>{this.props.company.name}</a>
+        //             </h2>
+        //             <EditCompany
+        //                 company = { this.props.company }
+        //                 edit = { ( e ) => this.props.edit( e ) }
+        //                 change = { ( e ) => this.props.change( e ) }
+        //                 errors = { this.props.errors }
+        //                 toggle = { ( e ) => this.toggleEditionForm( e ) }
+        //             />
+        //         </li>
+        //     );
+        // }
+
+        // To replace when edit is up
+        // <h2 className="company-name">
+        //     <a target="_blank" href={this.props.company.website}>{this.props.company.name}</a> <a className="edit-button" onClick={ ( e ) => this.toggleEditionForm( e ) }><span className="fas fa-pen"></span></a>
+        // </h2>
+
 
         return(
             <li className="company">
                 <h2 className="company-name">
-                    <a target="_blank" href={this.props.company.website}>{this.props.company.name}</a> <a className="edit-button" onClick={ ( e ) => this.toggleEditionForm( e ) }><span className="fas fa-pen"></span></a>
+                    <a target="_blank" href={this.props.company.website}>{this.props.company.name}</a>
                 </h2>
                 <ul className="company-infos">
                     { this.props.company.phone &&
